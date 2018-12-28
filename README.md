@@ -5,7 +5,7 @@ How to setup add an album, for the purposes of this, I will be providing example
 
 <h2>Preface</h2>
 
-My dad saw the video by <insert Redditor name here> on the 23rd December with us flying to Sydney on the 26th. So I decided I was going to sort it/something that worked the same for us. So I apologise that this is not at all an efficient or even a close to impressive method of doing this. Due to us not having Google Play Music, that was out of the question. So here is how I did it. It’s not ideal, but I can scan a card and it plays music sooooooooo....
+My dad saw the video by /u/hovee on the 23rd December with us flying to Sydney on the 26th. So I decided I was going to sort it/something that worked the same for us. So I apologise that this is not at all an efficient or even a close to impressive method of doing this. Due to us not having Google Play Music, that was out of the question. So here is how I did it. It’s not ideal, but I can scan a card and it plays music sooooooooo....
 Also this is the first instruction set I’ve ever made for programming something so I’m sorry if it sucks. I’ll create a discord so you can ping questions and if I can help I will or others might be able to. Here’s a link: https://discord.gg/tK6n3hh
 
 <h2>Introduction</h2>
@@ -197,7 +197,7 @@ This step will allow the actions.json file to call upon the script when the nece
                   "filename": "xinfinity.sh"
                 }
 </code>
-<h5><li>Start [m</li></h5>
+<h5><li>Start magic-cards</li></h5>
 1. Navigate to the [m folder: <code>cd /home/pi/magic-cards</code><br><br>
 2. Run the command to start it running: <code>script/restart</code>
 <h5><li>Edit cards.json:</li></h5>
