@@ -137,23 +137,23 @@ So find the album you would like on youtube, either as one song long (heckin eas
 <br><br>
 (Also this technique sucks, I know, and I'm very open to ideas which doesn't mean that I have one super long song but like I said in the preface, I had little time and I will improve in the future, but it works.)
 
-         <h5>1a. As a single super long song that is the full album</h5>
-         Download the song with this command directly to the hosted folder:<code>youtube-dl --extract-audio --audio-format mp3 -o /var/www/html/music/(song title).mp3 (youtube link)</code>
-         <br><br><strong>E.G.</strong><code>youtube-dl --extract-audio --audio-format mp3 -o /var/www/html/music/xinfinity.mp3 https://www.youtube.com/watch?v=2kzI9ksEjx0&t=2846s </code>
-         <br><br>
-         <h5>1b. As a playlist and then how to concatenate the songs into a single track</h5>
-          1. Make a new directory in the music folder: <code>sudo mkdir /var/www/html/music/(artist name)</code>
-            <br><strong>E.G.</strong><code>sudo mkdir /var/www/html/music/watsky</code><br><br>
-          2.       Download the playlist: <code>youtube-dl --extract-audio --audio-format mp3 -o /var/www/html/music/(artist name)/'%(autonumber)s.%(ext)s' (youtube playlist link)</code>
-              <br><strong>E.G.</strong><code>youtube-dl --extract-audio --audio-format mp3 -o /var/www/html/music/watsky/'%(autonumber)s.%(ext)s' https://www.youtube.com/watch?v=qaDuk0qna5g&list=PLblxhEQYeadH27CgeioDeuYgCpu9SbVbj</code><br><br>
-          3. Wait for all the tracks to download correctly, the above command will number them all from 00001.mp3 -> 00XXX.mp3 depending on how many tracks there are, this makes the next step easier.<br><br>
-          4.       Go to the folder:<code>cd /var/www/html/music/(artist name)</code>    <br><strong>E.G.</strong><code>cd /var/www/html/music/watsky</code><br><br>
-          5.       Concatenate the songs:<code>cat 00001.mp3 00002.mp3 00003.mp3 00004.mp3 ...... > (song title).mp3</code><br><br>
-            <strong>E.G.</strong><code>cat 00001.mp3 00002.mp3 00003.mp3 00004.mp3 00005.mp3 00006.mp3 00007.mp3 00008.mp3 00009.mp3 00010.mp3 > xinfinity.mp3</code><br><br>
-          6.       Move the song to the main folder: <code>mv (song title).mp3 /var/www/html/music/</code>    <br><strong>E.G.</strong> <code>mv xinfinity.mp3 /var/www/html/music/</code><br><br>
-          7. Navigate to the music folder: <code>cd /var/www/html/music/</code><br><br>
-          8. Clean up by removing the artist folder: <code>sudo rm -r (artist name)</code><br>
-          <strong>E.G.</strong> <code>sudo rm -r watsky</code>
+   <h5>1a. As a single super long song that is the full album</h5>
+   Download the song with this command directly to the hosted folder:<code>youtube-dl --extract-audio --audio-format mp3 -o /var/www/html/music/(song title).mp3 (youtube link)</code>
+   <br><br><strong>E.G.</strong><code>youtube-dl --extract-audio --audio-format mp3 -o /var/www/html/music/xinfinity.mp3 https://www.youtube.com/watch?v=2kzI9ksEjx0&t=2846s </code>
+   <br><br>
+   <h5>1b. As a playlist and then how to concatenate the songs into a single track</h5>
+    1. Make a new directory in the music folder: <code>sudo mkdir /var/www/html/music/(artist name)</code>
+      <br><strong>E.G.</strong><code>sudo mkdir /var/www/html/music/watsky</code><br><br>
+    2.       Download the playlist: <code>youtube-dl --extract-audio --audio-format mp3 -o /var/www/html/music/(artist name)/'%(autonumber)s.%(ext)s' (youtube playlist link)</code>
+        <br><strong>E.G.</strong><code>youtube-dl --extract-audio --audio-format mp3 -o /var/www/html/music/watsky/'%(autonumber)s.%(ext)s' https://www.youtube.com/watch?v=qaDuk0qna5g&list=PLblxhEQYeadH27CgeioDeuYgCpu9SbVbj</code><br><br>
+    3. Wait for all the tracks to download correctly, the above command will number them all from 00001.mp3 -> 00XXX.mp3 depending on how many tracks there are, this makes the next step easier.<br><br>
+    4.       Go to the folder:<code>cd /var/www/html/music/(artist name)</code>    <br><strong>E.G.</strong><code>cd /var/www/html/music/watsky</code><br><br>
+    5.       Concatenate the songs:<code>cat 00001.mp3 00002.mp3 00003.mp3 00004.mp3 ...... > (song title).mp3</code><br><br>
+      <strong>E.G.</strong><code>cat 00001.mp3 00002.mp3 00003.mp3 00004.mp3 00005.mp3 00006.mp3 00007.mp3 00008.mp3 00009.mp3 00010.mp3 > xinfinity.mp3</code><br><br>
+    6.       Move the song to the main folder: <code>mv (song title).mp3 /var/www/html/music/</code>    <br><strong>E.G.</strong> <code>mv xinfinity.mp3 /var/www/html/music/</code><br><br>
+    7. Navigate to the music folder: <code>cd /var/www/html/music/</code><br><br>
+    8. Clean up by removing the artist folder: <code>sudo rm -r (artist name)</code><br>
+    <strong>E.G.</strong> <code>sudo rm -r watsky</code>
 
 <h5><li>Direct yourself to it to make sure it actually is there:</li></h5>
 Open up a browser on any device that is on the same network and head to this address to check that the web server is running correctly and the .mp3 is accessible: <code>http://local_ip_of_raspberry_pi/music/(song title).mp3</code><br>
@@ -161,39 +161,51 @@ Open up a browser on any device that is on the same network and head to this add
 You should be able to click play or something and have the track playing through your device. if you've made it this far, I guess my instructions don't suck that much. Make sure to note down this address too for the next step.
 <h5><li>Create .sh file with cast to device with url (remember :80 and http):</li></h5>
 Okay now onto creating the script file which will be called when the card is scanned.<br><br>
-    1. First of all we need to find out the EXACT name of the device we are going to be casting to. To find this run the command: <code>cast discover</code><br>
-    This should produce an output of the Google Cast devices which have been detected on the network, groups too. make sure to note down exactly what is within the quotation marks. (Sorry, I'm doing this from memory) but this will be something like: <code>"Kitchen Speaker"</code> for me. So the thing to remember is <code>Kitchen Speaker</code>.<br><br>
+  1. First of all we need to find out the EXACT name of the device we are going to be casting to. To find this run the command: <code>cast discover</code><br>
+  This should produce an output of the Google Cast devices which have been detected on the network, groups too. make sure to note down exactly what is within the quotation marks. (Sorry, I'm doing this from memory) but this will be something like: <code>"Kitchen Speaker"</code> for me. So the thing to remember is <code>Kitchen Speaker</code>.<br><br>
 
-    2. After finding out the device name navigate to the config folder of the[ magic-cards ](https://github.com/maddox/magic-cards)repository you cloned. For me, I would run: <code>cd /home/pi/magic-cards/config</code><br><br>
+  2. After finding out the device name navigate to the config folder of the[ magic-cards ](https://github.com/maddox/magic-cards)repository you cloned. For me, I would run: <code>cd /home/pi/magic-cards/config</code><br><br>
 
-    3. When here, create a .sh file with the name of your artist or album preferably: <code>sudo nano (album or artist).sh</code><br>
-    <strong>E.G.</strong> <code>sudo nano xinfinity.sh</code><br><br>
+  3. When here, create a .sh file with the name of your artist or album preferably: <code>sudo nano (album or artist).sh</code><br>
+  <strong>E.G.</strong> <code>sudo nano xinfinity.sh</code><br><br>
 
-    4. When in this file you want to write the command to run to trigger the playing on your device. Before you make this file, feel free to test this command standalone to check if it works. But the command to put in the file is: <code>cast --name "(Name of Device or Group of Chromecast)" media play http://local_ip_of_raspberry_pi:80/music/(song title).mp3</code><br>
-    <strong>E.G.</strong> <code>cast --name "Kitchen Speaker" media play http://192.168.1.189:80/music/xinfinity.mp3</code><br><br>
+  4. When in this file you want to write the command to run to trigger the playing on your device. Before you make this file, feel free to test this command standalone to check if it works. But the command to put in the file is: <code>cast --name "(Name of Device or Group of Chromecast)" media play http://local_ip_of_raspberry_pi:80/music/(song title).mp3</code><br>
+  <strong>E.G.</strong> <code>cast --name "Kitchen Speaker" media play http://192.168.1.189:80/music/xinfinity.mp3</code><br><br>
 
-    5. Exit and save the file: <code>CTRL+X</code> then <code>CTRL+Y</code><br><br>
+  5. Exit and save the file: <code>CTRL+X</code> then <code>CTRL+Y</code><br><br>
 
-    6. Modify the file so that it can be executed: <code> chmod +x (script file name).sh</code><br>
-    <strong>E.G.</strong> <code>chmod +x xinfinity.sh</code><br><br>
+  6. Modify the file so that it can be executed: <code> chmod +x (script file name).sh</code><br>
+  <strong>E.G.</strong> <code>chmod +x xinfinity.sh</code><br><br>
 
-    7. At this point, I would test that the script works as intended. You should be able to run this command to have the desired output: <code>./(Script Name).sh</code><br>
-    <strong>E.G.</strong><code>./xinfinity.sh</code>
+  7. At this point, I would test that the script works as intended. You should be able to run this command to have the desired output: <code>./(Script Name).sh</code><br>
+  <strong>E.G.</strong><code>./xinfinity.sh</code>
 <h5><li>Edit actions.json to have the script called being possible:</li></h5>
 This step will allow the actions.json file to call upon the script when the necessary card is triggered, it's a pretty simple one, but the actions.json file is very powerful if you want it to do more things, check it out on the [magic-cards repo](https://github.com/maddox/magic-cards/blob/master/docs/actions.md)
 <br><br>
 1. Open up/create the actions.json file: <code>sudo nano /home/pi/magic-cards/config/actions.json </code><br><br>
-2. It'll probably be entry, unless you've copied mine in, which has a load of entries. Basically to customise your actions, you need to make sure each enter looks like this (I can't sort the bloody formatting so check my actions.json for how it should look with new lines etc.):<br><code>{ "(ActionName)": { "type": "script", "filename": "(script name).sh" } }</code> <br>
-<strong>E.G.</strong> <code>{"InfinityScript": { "type": "script", "filename": "xinfinity.sh" }</code>
+2. It'll probably be entry, unless you've copied mine in, which has a load of entries. Basically to customise your actions, you need to make sure each enter looks like this:
+<code>
+                        "(ActionName))": {
+                          "type": "script",
+                          "filename": "(script name).sh"
+                        }
+</code>
+<code>
+                        "InfinityScript": {
+                          "type": "script",
+                          "filename": "xinfinity.sh"
+                        }
+</code>
 <h5><li>Start [magic-cards](https://github.com/maddox/magic-cards)</li></h5>
 1. Navigate to the [magic-cards](https://github.com/maddox/magic-cards) folder: <code>cd /home/pi/magic-cards</code><br><br>
 2. Run the command to start it running: <code>script/restart</code>
 <h5><li>Edit cards.json:</li></h5>
 There are two ways to add Cards:
-  <br><br><strong>  6a. Add the Card to the cards.json file:</strong>
-            <br><br>  1. Edit the cards.json file: <code>sudo nano /home/pi/magic-cards/config/cards.json</code>
-                <br><br>Use the format below to add the correct details (Once again, check my cards.json file to see):
-                  <code>{
+<br><br><strong>  6a. Add the Card to the cards.json file:</strong>
+<br><br>  1. Edit the cards.json file: <code>sudo nano /home/pi/magic-cards/config/cards.json</code>
+<br><br>Use the format below to add the correct details (Once again, check my cards.json file to see):
+<code>
+                  {
                     "code": "<RFID Code>",
                     "type": "album",
                     "action": "<action name>",
@@ -202,9 +214,11 @@ There are two ways to add Cards:
                     "subtitle": "<artist>",
                     "uri": "",
                     "id": <id>
-                  },</code>
-
-              <br><br><strong>E.G.</strong> <code>  {
+                  },
+</code>
+<br><br><strong>E.G.</strong> 
+<code> 
+           {
                       "code": "090033639a",
                       "type": "album",
                       "action": XInfinityScript,
@@ -213,38 +227,39 @@ There are two ways to add Cards:
                       "subtitle": "Watsky",
                       "uri": "",
                       "id": 5217263514
-                   },</code>
+                   },
+</code>
 
-              <br><br><strong>RFID Code</strong> - This is the ID of the card and is crucial in the operation. There are 2 ways to get this
-                          <br><br>  1. From directing to <code>http://local_pi_ip_address:5000</code><br>
-                          <strong>E.G</strong> <code>http://192.168.1.189:5000</code>
-                          <br>     2. Clicking 'Add Card'
-                          <br>     3. Clicking in the 'Card Code' Box
-                          <br>     4. Plug the RFID Reader into the computer you are on
-                          <br>     5. Scan the card
-                          <br>     6. Copy down the Code
+<br><br><strong>RFID Code</strong> - This is the ID of the card and is crucial in the operation. There are 2 ways to get this
+  <br><br>  1. From directing to <code>http://local_pi_ip_address:5000</code><br>
+  <strong>E.G</strong> <code>http://192.168.1.189:5000</code>
+  <br>     2. Clicking 'Add Card'
+  <br>     3. Clicking in the 'Card Code' Box
+  <br>     4. Plug the RFID Reader into the computer you are on
+  <br>     5. Scan the card
+  <br>     6. Copy down the Code
 
 
 
-                        <br><br>Or<br><br>    1. Connect the Pi to a Screen
-                          <br>     2. Open a terminal
-                          <br>     3. Plug in the RFID Reader
-                          <br>     4. Scan the card
-                          <br>     5. Copy down the code
+<br><br>Or<br><br>    1. Connect the Pi to a Screen
+  <br>     2. Open a terminal
+  <br>     3. Plug in the RFID Reader
+  <br>     4. Scan the card
+  <br>     5. Copy down the code
 
-          <br><br><br><strong>    Action Name</strong> - The name of the action to call (Step 3)
-          <br> <br>  <strong> Link to album art (Optional)</strong> - Url to image of the album art
-          <br><br><strong>    Album Title (Optional) </strong>- The title of the album just made
-          <br><br><strong>    Artist (Optional)</strong> - The Artist of the Album
-          <br><br><strong>    ID</strong> - 9 digit unique number
+<br><br><br><strong>    Action Name</strong> - The name of the action to call (Step 3)
+<br> <br>  <strong> Link to album art (Optional)</strong> - Url to image of the album art
+<br><br><strong>    Album Title (Optional) </strong>- The title of the album just made
+<br><br><strong>    Artist (Optional)</strong> - The Artist of the Album
+<br><br><strong>    ID</strong> - 9 digit unique number
 
-  <br><br><br>  <strong>6b. Through the GUI:</strong>
-        <br><br>  1.Visit the hosted server site in a browser: <code>http://local_pi_ip_address:5000</code>  <br>  <strong>E.G.</strong> <code>http://192.168.1.189:5000</code>
-        <br>  2. Click 'Add Card'
-        <br>  3. Either paste in an itunes link at the top (This has been temperamental for me) or fill in the details of your album.
-        <br>  4. Click the 'Card Code' Box
-        <br>  5. Scan the Card and the box should auto-fill
-        <br> 6. Save the card
+<br><br><br>  <strong>6b. Through the GUI:</strong>
+<br><br>  1.Visit the hosted server site in a browser: <code>http://local_pi_ip_address:5000</code>  <br>  <strong>E.G.</strong> <code>http://192.168.1.189:5000</code>
+<br>  2. Click 'Add Card'
+<br>  3. Either paste in an itunes link at the top (This has been temperamental for me) or fill in the details of your album.
+<br>  4. Click the 'Card Code' Box
+<br>  5. Scan the Card and the box should auto-fill
+<br> 6. Save the card
 <h5><li>Run the restart script (Just to be safe ygm):</li></h5>
 1. Navigate to the [magic-cards](https://github.com/maddox/magic-cards) folder: <code>cd /home/pi/magic-cards</code><br><br>
 2. Run the restart script: <code>script/restart</code>
@@ -256,37 +271,37 @@ There are two ways to add Cards:
 
 
 <h2> Troubleshooting</h2>
-My personal debug guide (idk if this is useful), work backwards. Look I even made a bloody flowchart for you god damn) (But all this is made from memory because I’m currently flying halfway across the world on a flight with no WiFi and I’m not allowed to use my laptop, so any issues. Ping me on [discord](https://discord.gg/tK6n3hh) and I’ll help as much as I can from experience)
+My personal debug guide (idk if this is useful), work backwards. Look I even made a bloody flowchart for you god damn) (But all this is made from memory because I’m currently flying halfway across the world on a flight with no WiFi and I’m not allowed to use my laptop, so any issues. Ping me on [discord](https://discord.gg/tK6n3hh) and I’ll help as much as I can from experience)<br><br>
 
 Check the PDF I uploaded to refer yourself to the below steps.
-
+<br><br>
 Troubleshooting (1):
-There’s a problem with the card or the reader being detected.
-    * To check the reader connect the Pi to a screen, ensure the command line is open, tap the card on the reader, if you get an output then the reader works.
-    * Check the output in the command line is the same as that in the cards.json file.
-    * If that is all correct, then check the config.json file has the correct even defined. Check step <ls -l devices step> to find the event number.
-    * If you don’t get an output to the command line then the card reader isn’t connected or it is brok.
-
+<br>There’s a problem with the card or the reader being detected.
+<br>    * To check the reader connect the Pi to a screen, ensure the command line is open, tap the card on the reader, if you get an output then the reader works.
+<br>    * Check the output in the command line is the same as that in the cards.json file.
+  <br>  * If that is all correct, then check the config.json file has the correct even defined. Check step <ls -l devices step> to find the event number.
+  <br>  * If you don’t get an output to the command line then the card reader isn’t connected or it is brok.
+<br><br>
 Troubleshooting (2):
-There’s a problem with[ magic-cards ](https://github.com/maddox/magic-cards)calling the script.
-    * Check actions.json is calling the correct .sh file
-    * Check the .sh file is in the config folder
-    * Check cards.json to ensure the card is calling the correct action.
-
+<br>There’s a problem with[ magic-cards ](https://github.com/maddox/magic-cards)calling the script.
+<br>    * Check actions.json is calling the correct .sh file
+  <br>  * Check the .sh file is in the config folder
+  <br>  * Check cards.json to ensure the card is calling the correct action.
+<br><br>
 Troubleshooting (3):
-There’s a problem with running the script
-    * Ensure you’ve edited the .sh file with the chmod +x command
-    * Ensure it is a script file
-
-Troubleshooting (4):
-There’s a problem with the command in the script file
-    * Ensure that it is using the correct http or https
-    * Ensure you’ve got the port included in the script command.
-
+<br>There’s a problem with running the script
+<br>    * Ensure you’ve edited the .sh file with the chmod +x command
+<br>    * Ensure it is a script file
+<br><br>
+<br>Troubleshooting (4):
+<br>There’s a problem with the command in the script file
+  <br>  * Ensure that it is using the correct http or https
+  <br>  * Ensure you’ve got the port included in the script command.
+<br><br>
 Troubleshooting (5):
-There’s a problem with the indexing and structure of your web server.
-    * Ensure you’re directing yourself to the same folder as follows /var/www/html/
-    * Ensure the .mp3 is in the correct folder
-
-Bonus Error: ‘Can’t connect to the device’ error.
-Make sure that you can discover the device and the name is the same as in the ‘cast discover’ output.
+<br>There’s a problem with the indexing and structure of your web server.
+<br>    * Ensure you’re directing yourself to the same folder as follows /var/www/html/
+  <br>  * Ensure the .mp3 is in the correct folder
+<br><br>
+<br>Bonus Error: ‘Can’t connect to the device’ error.
+<br>Make sure that you can discover the device and the name is the same as in the ‘cast discover’ output.
