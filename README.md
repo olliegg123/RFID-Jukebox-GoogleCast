@@ -1,7 +1,7 @@
 <h1>RFID Jukebox Guide</h1>
 How to setup add an album, for the purposes of this, I will be providing examples to download X Infinity by Watsky and my device has an ip of 192.168.1.189.
 
-<strong>TLDR:</strong> Setup [magic-cards](https://github.com/maddox/magic-cards) to call a script containing a [cast](https://github.com/barnybug/go-cast/blob/master/README.md)command to stream locally hosted music to a google cast device or group.
+<strong>TLDR:</strong> Setup [magic-cards](https://github.com/maddox/magic-cards) to call a script containing a [go-cast](https://github.com/barnybug/go-cast/blob/master/README.md)command to stream locally hosted music to a google cast device or group.
 
 <h2>Preface</h2>
 
@@ -26,7 +26,7 @@ So the hardware I used was:
 <li>125KHz RFID cards  - (Amazon) </li></ul>
 
 <h4> RFID Reader Config</h4>
-First of all you need a windows desktop to configure the RFID reader follow these instructions from the[ magic-cards ](https://github.com/maddox/magic-cards)repo:<br><br>
+First of all you need a windows desktop to configure the RFID reader follow these instructions from the [magic-cards](https://github.com/maddox/magic-cards) repo:<br><br>
 1. Download [this software](https://www.dropbox.com/s/ena4ukh9wewhj9x/rfid-reader-programmer.zip?dl=0) on a Windows PC or Laptop. <br><br>
 2. Plug the RFID reader into the Laptop or PC USB port and open the software.<br><br>
 3. Make sure that the buttons shown in the image below are selected, then click `set`.<br><br>
