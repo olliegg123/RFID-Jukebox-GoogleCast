@@ -1,7 +1,7 @@
 <h1>RFID Jukebox Guide</h1>
 How to setup add an album, for the purposes of this, I will be providing examples to download X Infinity by Watsky and my device has an ip of 192.168.1.189.
 
-<strong>TLDR:</strong> Setup[ magic-cards ](https://github.com/maddox/magic-cards)to call a script containing a[ go-cast ](https://github.com/barnybug/go-cast/blob/master/README.md)command to stream locally hosted music to a google cast device or group.
+<strong>TLDR:</strong> Setup magic-cards (https://github.com/maddox/magic-cards) to call a script containing a go-cast (https://github.com/barnybug/go-cast/blob/master/README.md)command to stream locally hosted music to a google cast device or group.
 
 <h2>Preface</h2>
 
@@ -26,7 +26,7 @@ So the hardware I used was:
 <li>125KHz RFID cards  - (Amazon) </li></ul>
 
 <h4> RFID Reader Config</h4>
-First of all you need a windows desktop to configure the RFID reader follow these instructions from the[ magic-cards ](https://github.com/maddox/magic-cards)repo:<br><br>
+First of all you need a windows desktop to configure the RFID reader follow these instructions from the magic-cards (https://github.com/maddox/magic-cards)repo:<br><br>
 1. Download [this software](https://www.dropbox.com/s/ena4ukh9wewhj9x/rfid-reader-programmer.zip?dl=0) on a Windows PC or Laptop. <br><br>
 2. Plug the RFID reader into the Laptop or PC USB port and open the software.<br><br>
 3. Make sure that the buttons shown in the image below are selected, then click <code>set</code>.<br><br>
@@ -53,13 +53,13 @@ For all file transferring I would recommend using a program with an interface to
 <h2>Project Setup and Installing</h2>
 
 <h4> Node, NPM, Yarn and Git Install </h4>
-There's a set of instructions on the [magic-cards](https://github.com/maddox/magic-cards/blob/master/docs/install.md) install page which you can use instead of these.<br><br>
+There's a set of instructions on the magic-cards install page which you can use instead of these.<br><br>
 So make sure you have git installed: <code>sudo apt-get install git</code><br><br>
 I can't find the exact commands I used to install node, but I know I used the nvm manager and had to use the latest version of node (9.11.1 at the time of writing this. But just check online for how to install node, then run the next command. I'll update this if somebody finds commands which work exactly).<br><br>
 Then install yarn:<code>npm install yarn -g</code>
 
 
-<h4>[ magic-cards ](https://github.com/maddox/magic-cards) Setup</h4>
+<h4>Magic-Cards Setup</h4>
 Check out this first repository (magic-cards) and see all the cool stuff, but I’ll copy the instructions across here for you to follow:
 <br><br>Navigate home:<code>cd ~</code>
 <br>Clone the repo:<code>git clone https://github.com/maddox/magic-cards</code>
@@ -68,7 +68,7 @@ Check out this first repository (magic-cards) and see all the cool stuff, but I�
 <br>Run the install script:<code>script/install</code>
 <br>Run the stop script:<code>script/stop</code>
 
-<h4>[ go-cast ](https://github.com/barnybug/go-cast/blob/master/README.md)Setup</h4>
+<h4>go-cast Setup</h4>
 Another great repository to check out (go-cast) and this allows casting of media to the chrome cast devices. I’ll post instructions below again:<br><br>
 Visit [this page](https://github.com/barnybug/go-cast/releases/tag/0.1.0) to find the version you need, from a Pi it is the<code>cast-linux-arm</code>.
 
@@ -77,7 +77,7 @@ Visit [this page](https://github.com/barnybug/go-cast/releases/tag/0.1.0) to fin
 <br>Move the file:<code>sudo mv cast-my-platform /usr/local/bin/cast</code><br>
 <strong>E.G.</strong><code>sudo mv cast-linux-arm /usr/bin/local/cast</code><br>
 <br>Edit the permissions:<code>sudo chmod +x /usr/bin/local/cast </code>
-<br><br>Cast is now setup, check out [the repo](https://github.com/barnybug/go-cast/blob/master/README.md) for usability and features etc. It’s really cool and powerful.
+<br><br>Cast is now setup, check out the repo (https://github.com/barnybug/go-cast/blob/master/README.md) for usability and features etc. It’s really cool and powerful.
 
 <h4> Web Server Setup</h4>
 Setup the web server, these instructions are pulled from the [Raspberry Pi Website](https://raspberrypi.org/documentation/remote-access/web-server/apache.md)<br><br>
@@ -93,7 +93,7 @@ Install apache:<code>sudo apt-get install apache2 -y</code>
 <h3> DISCLAIMER: </h3>
 <strong>I do not condone breaking the law or illegally downloading YouTube music if it's against copyright but here is a purely educational way to do it and a really powerful tool to do it with and to check out [ youtube-dl ](https://github.com/rg3/youtube-dl/blob/master/README.md) once again, instructions below for install but read up on its usage because I’ll be giving v simple usage that I’ve done for this project.</strong>
 
-<h4>[ youtube-dl ](https://github.com/rg3/youtube-dl/blob/master/README.md) setup</h4>
+<h4>[youtube-dl](https://github.com/rg3/youtube-dl/blob/master/README.md) setup</h4>
 
 Download the repo: <code>sudo curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl</code>
 <br>Install it: <code>sudo chmod a+rx /usr/local/bin/youtube-dl</code>
@@ -106,7 +106,7 @@ Now go to the[ magic-cards ](https://github.com/maddox/magic-cards)config direct
 In here you’ll need 3 files: actions.json, config.json and cards.json. I’ll go into detail about how to make these and I’ll be posting mine as examples. (All this can be found on the[ magic-cards ](https://github.com/maddox/magic-cards)repo but I’m just going to explain it how I found it)
 
 <h4>config.json</h4>
- This file defines the usb event to use for the reader as well as the room and Spotify shit if you want it but I didn’t care for it, like I said check out the[ magic-cards ](https://github.com/maddox/magic-cards)repo it’s probably way more powerful than I’m using it for.
+ This file defines the usb event to use for the reader as well as the room and Spotify shit if you want it but I didn’t care for it, like I said check out the magic-cards (https://github.com/maddox/magic-cards) repo it’s probably way more powerful than I’m using it for.
  <br><br> For this, copy my config file and ensure you use the correct event number which can be found by doing:
  <br>Navigate to the folder: <code>cd /dev/input/by-id/</code>
  <br>List the devices:<code> ls -l</code>
@@ -117,7 +117,7 @@ lrwxrwxrwx 1 root root 9 Dec 25 16:26 usb-Sycreader_USB_Reader_08FF20150112-even
 <br><br> Here the event I would be using is<code>event0</code> because the description refers to the reader.
 
 <h4>actions.json</h4>
-This holds the possible actions to be taken on the scan of a card, so you can do Sonos stuff if you read the[ magic-cards ](https://github.com/maddox/magic-cards)repo but I’m just going to be calling scripts, each action named after the album/artist and each script named something similar but ending with .sh.
+This holds the possible actions to be taken on the scan of a card, so you can do Sonos stuff if you read the magic-cards repo but I’m just going to be calling scripts, each action named after the album/artist and each script named something similar but ending with .sh.
 <br><br>We'll be editing this file later on in the full run through.
 
 <h4>cards.json</h4>
@@ -132,7 +132,7 @@ Now basically, I’m going to run through adding one card from beginning to end 
 <br>
 
 <ol><h5><li>Download song/playlist:</h5>
-<strong> If you already have the music downloaded you can skip the[ youtube-dl ](https://github.com/rg3/youtube-dl/blob/master/README.md)stuff and just place the songs into the folder stated. Or you might need to 'cat' them if they're individual tracks.</strong><br><br>
+<strong> If you already have the music downloaded you can skip the youtube-dl stuff and just place the songs into the folder stated. Or you might need to 'cat' them if they're individual tracks.</strong><br><br>
 So find the album you would like on youtube, either as one song long (heckin easier) or as a playlist which we will concatenate. But I understand that the easy method isn't always possible so I'll show you both dw).
 <br><br>
 (Also this technique sucks, I know, and I'm very open to ideas which doesn't mean that I have one super long song but like I said in the preface, I had little time and I will improve in the future, but it works.)
@@ -164,7 +164,7 @@ Okay now onto creating the script file which will be called when the card is sca
   1. First of all we need to find out the EXACT name of the device we are going to be casting to. To find this run the command: <code>cast discover</code><br>
   This should produce an output of the Google Cast devices which have been detected on the network, groups too. make sure to note down exactly what is within the quotation marks. (Sorry, I'm doing this from memory) but this will be something like: <code>"Kitchen Speaker"</code> for me. So the thing to remember is <code>Kitchen Speaker</code>.<br><br>
 
-  2. After finding out the device name navigate to the config folder of the[ magic-cards ](https://github.com/maddox/magic-cards)repository you cloned. For me, I would run: <code>cd /home/pi/magic-cards/config</code><br><br>
+  2. After finding out the device name navigate to the config folder of the magic-cards repository you cloned. For me, I would run: <code>cd /home/pi/magic-cards/config</code><br><br>
 
   3. When here, create a .sh file with the name of your artist or album preferably: <code>sudo nano (album or artist).sh</code><br>
   <strong>E.G.</strong> <code>sudo nano xinfinity.sh</code><br><br>
@@ -180,7 +180,7 @@ Okay now onto creating the script file which will be called when the card is sca
   7. At this point, I would test that the script works as intended. You should be able to run this command to have the desired output: <code>./(Script Name).sh</code><br>
   <strong>E.G.</strong><code>./xinfinity.sh</code>
 <h5><li>Edit actions.json to have the script called being possible:</li></h5>
-This step will allow the actions.json file to call upon the script when the necessary card is triggered, it's a pretty simple one, but the actions.json file is very powerful if you want it to do more things, check it out on the [magic-cards repo](https://github.com/maddox/magic-cards/blob/master/docs/actions.md)
+This step will allow the actions.json file to call upon the script when the necessary card is triggered, it's a pretty simple one, but the actions.json file is very powerful if you want it to do more things, check it out on the magic-cards repo (https://github.com/maddox/magic-cards/blob/master/docs/actions.md)
 <br><br>
 1. Open up/create the actions.json file: <code>sudo nano /home/pi/magic-cards/config/actions.json </code><br><br>
 2. It'll probably be entry, unless you've copied mine in, which has a load of entries. Basically to customise your actions, you need to make sure each enter looks like this:
@@ -197,8 +197,8 @@ This step will allow the actions.json file to call upon the script when the nece
                   "filename": "xinfinity.sh"
                 }
 </code>
-<h5><li>Start [magic-cards](https://github.com/maddox/magic-cards)</li></h5>
-1. Navigate to the [magic-cards](https://github.com/maddox/magic-cards) folder: <code>cd /home/pi/magic-cards</code><br><br>
+<h5><li>Start [m</li></h5>
+1. Navigate to the [m folder: <code>cd /home/pi/magic-cards</code><br><br>
 2. Run the command to start it running: <code>script/restart</code>
 <h5><li>Edit cards.json:</li></h5>
 There are two ways to add Cards:
@@ -262,7 +262,7 @@ There are two ways to add Cards:
 <br>  5. Scan the Card and the box should auto-fill
 <br> 6. Save the card
 <h5><li>Run the restart script (Just to be safe ygm):</li></h5>
-1. Navigate to the [magic-cards](https://github.com/maddox/magic-cards) folder: <code>cd /home/pi/magic-cards</code><br><br>
+1. Navigate to the magic-cards folder: <code>cd /home/pi/magic-cards</code><br><br>
 2. Run the restart script: <code>script/restart</code>
 <h5><li>Test it and pray to the gods of RFID</li></h5>
 1. Scan the card you've configured for: <code>*boop*</code>
@@ -272,7 +272,7 @@ There are two ways to add Cards:
 
 
 <h2> Troubleshooting</h2>
-My personal debug guide (idk if this is useful), work backwards. Look I even made a bloody flowchart for you god damn) (But all this is made from memory because I’m currently flying halfway across the world on a flight with no WiFi and I’m not allowed to use my laptop, so any issues. Ping me on [discord](https://discord.gg/tK6n3hh) and I’ll help as much as I can from experience)<br><br>
+My personal debug guide (idk if this is useful), work backwards. Look I even made a bloody flowchart for you god damn) (But all this is made from memory because I’m currently flying halfway across the world on a flight with no WiFi and I’m not allowed to use my laptop, so any issues. Ping me on discord (https://discord.gg/tK6n3hh) and I’ll help as much as I can from experience)<br><br>
 
 Check the PDF I uploaded to refer yourself to the below steps.
 <br><br>
@@ -284,7 +284,7 @@ Troubleshooting (1):
   <br>  * If you don’t get an output to the command line then the card reader isn’t connected or it is brok.
 <br><br>
 Troubleshooting (2):
-<br>There’s a problem with[ magic-cards ](https://github.com/maddox/magic-cards)calling the script.
+<br>There’s a problem with magic-cards calling the script.
 <br>    * Check actions.json is calling the correct .sh file
   <br>  * Check the .sh file is in the config folder
   <br>  * Check cards.json to ensure the card is calling the correct action.
