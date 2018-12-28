@@ -1,7 +1,7 @@
 <h1>RFID Jukebox Guide</h1>
 How to setup add an album, for the purposes of this, I will be providing examples to download X Infinity by Watsky and my device has an ip of 192.168.1.189.
 
-<strong>TLDR:</strong> Setup[ magic-cards ](https://github.com/maddox/magic-cards)to call a script containing a[ go-cast ](https://github.com/barnybug/go-cast/blob/master/README.md)command to stream locally hosted music to a google cast device or group.
+<strong>TLDR:</strong> Setup[magic](https://github.com/maddox/magic-cards)to call a script containing a[ go-cast ](https://github.com/barnybug/go-cast/blob/master/README.md)command to stream locally hosted music to a google cast device or group.
 
 <h2>Preface</h2>
 
