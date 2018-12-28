@@ -185,16 +185,17 @@ This step will allow the actions.json file to call upon the script when the nece
 1. Open up/create the actions.json file: <code>sudo nano /home/pi/magic-cards/config/actions.json </code><br><br>
 2. It'll probably be entry, unless you've copied mine in, which has a load of entries. Basically to customise your actions, you need to make sure each enter looks like this:
 <code>
-                        "(ActionName))": {
-                          "type": "script",
-                          "filename": "(script name).sh"
-                        }
+                "(ActionName))": {
+                  "type": "script",
+                  "filename": "(script name).sh"
+                }
 </code>
+<br><strong>E.G.</strong><br>
 <code>
-                        "InfinityScript": {
-                          "type": "script",
-                          "filename": "xinfinity.sh"
-                        }
+                "InfinityScript": {
+                  "type": "script",
+                  "filename": "xinfinity.sh"
+                }
 </code>
 <h5><li>Start [magic-cards](https://github.com/maddox/magic-cards)</li></h5>
 1. Navigate to the [magic-cards](https://github.com/maddox/magic-cards) folder: <code>cd /home/pi/magic-cards</code><br><br>
@@ -205,29 +206,29 @@ There are two ways to add Cards:
 <br><br>  1. Edit the cards.json file: <code>sudo nano /home/pi/magic-cards/config/cards.json</code>
 <br><br>Use the format below to add the correct details (Once again, check my cards.json file to see):
 <code>
-                  {
-                    "code": "<RFID Code>",
-                    "type": "album",
-                    "action": "<action name>",
-                    "artURL": "<link to album art>",
-                    "title": "<album title>",
-                    "subtitle": "<artist>",
-                    "uri": "",
-                    "id": <id>
-                  },
+                {
+                  "code": "<RFID Code>",
+                  "type": "album",
+                  "action": "<action name>",
+                  "artURL": "<link to album art>",
+                  "title": "<album title>",
+                  "subtitle": "<artist>",
+                  "uri": "",
+                  "id": <id>
+                },
 </code>
 <br><br><strong>E.G.</strong> 
 <code> 
-           {
-                      "code": "090033639a",
-                      "type": "album",
-                      "action": XInfinityScript,
-                      "artURL": "https://preview.redd.it/7nlnklgq1zgx.png?width=1024&auto=webp&s=bb1110b519e0f5869d8912d1b9f462105b67c92c",
-                      "title": "X Infinity",
-                      "subtitle": "Watsky",
-                      "uri": "",
-                      "id": 5217263514
-                   },
+                {
+                    "code": "090033639a",
+                    "type": "album",
+                    "action": XInfinityScript,
+                    "artURL": "https://preview.redd.it/7nlnklgq1zgx.png?width=1024&auto=webp&s=bb1110b519e0f5869d8912d1b9f462105b67c92c",
+                    "title": "X Infinity",
+                    "subtitle": "Watsky",
+                    "uri": "",
+                    "id": 5217263514
+                 },
 </code>
 
 <br><br><strong>RFID Code</strong> - This is the ID of the card and is crucial in the operation. There are 2 ways to get this
