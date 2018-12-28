@@ -1,0 +1,134 @@
+{
+  "Home Assistant": {
+    "type": "home_assistant",
+    "host": "192.168.1.50",
+    "port": "8123",
+    "ssl": false,
+    "username": "olliegg",
+    "password": "Bacon123"
+  },
+  "My Script": {
+    "type": "script",
+    "filename": "test.sh"
+  },
+  "HamiltonScript": {
+    "type": "script",
+    "filename": "hamilton.sh"
+  },
+  "MormonScript": {
+    "type": "script",
+    "filename": "mormon.sh"
+  },
+  "PaulHeatonScript": {
+    "type": "script",
+    "filename": "paulheaton.sh"
+  },
+  "SoupScript": {
+    "type": "script",
+    "filename": "soup.sh"
+  },
+  "BestBeatlesScript": {
+    "type": "script",
+    "filename": "bestofbeatles.sh"
+  },
+  "LesMisScript": {
+    "type": "script",
+    "filename": "lesmis.sh"
+  },
+  "VoyageScript": {
+    "type": "script",
+    "filename": "ezravoyage.sh"
+  },
+  "TamaraScript": {
+    "type": "script",
+    "filename": "ezratamara.sh"
+  },
+  "BillyScript": {
+    "type": "script",
+    "filename": "billyjoel.sh"
+  },
+  "RumourScript": {
+    "type": "script",
+    "filename": "rumours.sh"
+  },
+  "AutomaticScript": {
+    "type": "script",
+    "filename": "remautomatic.sh"
+  },
+  "OutOfTimeScript": {
+    "type": "script",
+    "filename": "remoutoftime.sh"
+  },
+  "FOTCScript": {
+    "type": "script",
+    "filename": "fotc.sh"
+  },
+  "BoScript": {
+    "type": "script",
+    "filename": "what.sh"
+  },
+  "CardboardScript": {
+    "type": "script",
+    "filename": "cardboardcastles.sh"
+  },
+  "InfinityScript": {
+    "type": "script",
+    "filename": "xinfinity.sh"
+  },
+  "SgtPepperScript": {
+    "type": "script",
+    "filename": "sgtpepper.sh"
+  },
+  "QueenScript": {
+    "type": "script",
+    "filename": "queenbest.sh"
+  },
+  "MorningGloryScript": {
+    "type": "script",
+    "filename": "morningglory.sh"
+  },
+  "AbbeyRoadScript": {
+    "type": "script",
+    "filename": "abbeyroad.sh"
+  },
+  "ZiggyScript": {
+    "type": "script",
+    "filename": "ziggystardust.sh"
+  },
+  "ArcticScript": {
+    "type": "script",
+    "filename": "arcticmonkeys.sh"
+  },
+  "ComptonScript": {
+    "type": "script",
+    "filename": "nwa.sh"
+  },
+  "EminemShow": {
+    "type": "script",
+    "filename": "eminemshow.sh"
+  },
+  "RosesScript": {
+    "type": "script",
+    "filename": "stoneroses.sh"
+  },
+  "ShowmanScript": {
+    "type": "script",
+    "filename": "showman.sh"
+  },
+  "NatureTapesScript": {
+    "type": "script",
+    "filename": "naturetapes.sh"
+  },
+  "SpiritScript": {
+    "type": "script",
+    "filename": "spiritphone.sh"
+  },
+  "LionScript": {
+    "type": "script",
+    "filename": "lynchlion.sh"
+  },
+  "DollyScript": {
+    "type": "script",
+    "filename": "dolly.sh"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "Sonos": {
+    "type": "sonos",
+    "host": "192.168.1.50",
+    "port": "5005",
+    "username": "myname",
+    "password": "mypassword",
+    "room": "Living Room",
+    "playlist": {
+      "shuffle": "on",
+      "repeat": "on"
+    },
+    "album": {
+      "shuffle": "off",
+      "repeat": "off"
+    },
+    "song": {
+      "shuffle": "off",
+      "repeat": "on"
+    }
+  },
+  "Home Assistant": {
+    "type": "home_assistant",
+    "host": "192.168.1.50",
+    "port": "8123",
+    "ssl": false,
+    "password": "hapassword"
+  },
+  "Family Room Channels": {
+    "type": "channels",
+    "host": "192.168.1.120",
+    "port": "57000"
+  },
+  "My Script": {
+    "type": "script",
+    "filename": "test.sh"
+  }
+}

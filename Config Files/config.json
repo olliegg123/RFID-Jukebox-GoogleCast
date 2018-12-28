@@ -1,0 +1,8 @@
+{
+  "room": "Living Room",
+  "input_device": "event2",
+  "spotify": {
+    "clientID": "XXX",
+    "clientSecret": "XXX"
+  }
+}
