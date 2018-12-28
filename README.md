@@ -6,7 +6,7 @@ How to setup add an album, for the purposes of this, I will be providing example
 <h2>Preface</h2>
 
 My dad saw the video by <insert Redditor name here> on the 23rd December with us flying to Sydney on the 26th. So I decided I was going to sort it/something that worked the same for us. So I apologise that this is not at all an efficient or even a close to impressive method of doing this. Due to us not having Google Play Music, that was out of the question. So here is how I did it. It’s not ideal, but I can scan a card and it plays music sooooooooo....
-Also this is the first instruction set I’ve ever made for programming something so I’m sorry if it sucks. I’ll create a discord so you can ping questions and if I can help I will or others might be able to. Here’s a link: <discord link>
+Also this is the first instruction set I’ve ever made for programming something so I’m sorry if it sucks. I’ll create a discord so you can ping questions and if I can help I will or others might be able to. Here’s a link: https://discord.gg/tK6n3hh
 
 <h2>Introduction</h2>
 
@@ -53,10 +53,10 @@ For all file transferring I would recommend using a program with an interface to
 <h2>Project Setup and Installing</h2>
 
 <h4> Node, NPM, Yarn and Git Install </h4>
-There's a set of instructions on the [magic-cards install page](https://github.com/maddox/magic-cards/blob/master/docs/install.md) which you can use instead of these.<br><br>
+There's a set of instructions on the [magic-cards](https://github.com/maddox/magic-cards/blob/master/docs/install.md) install page which you can use instead of these.<br><br>
 So make sure you have git installed: `sudo apt-get install git`<br><br>
 I can't find the exact commands I used to install node, but I know I used the nvm manager and had to use the latest version of node (9.11.1 at the time of writing this. But just check online for how to install node, then run the next command. I'll update this if somebody finds commands which work exactly).<br><br>
-Then install yarn: `npom install yarn -g`
+Then install yarn: `npm install yarn -g`
 
 
 <h4>[ magic-cards ](https://github.com/maddox/magic-cards)Setup</h4>
@@ -256,7 +256,7 @@ There are two ways to add Cards:
 
 
 <h2> Troubleshooting</h2>
-My personal debug guide (idk if this is useful), work backwards. Look I even made a bloody flowchart for you god damn) (But all this is made from memory because I’m currently flying halfway across the world on a flight with no WiFi and I’m not allowed to use my laptop, so any issues. Ping me on discord and I’ll help as much as I can from experience)
+My personal debug guide (idk if this is useful), work backwards. Look I even made a bloody flowchart for you god damn) (But all this is made from memory because I’m currently flying halfway across the world on a flight with no WiFi and I’m not allowed to use my laptop, so any issues. Ping me on [discord](https://discord.gg/tK6n3hh) and I’ll help as much as I can from experience)
 
 Check the PDF I uploaded to refer yourself to the below steps.
 
